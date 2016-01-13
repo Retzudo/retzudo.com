@@ -1,0 +1,33 @@
+.hi {
+    text-align: center;
+    margin: 5rem 0;
+}
+
+.name {
+    margin: 2rem;
+}
+
+.romaji, .kanji {
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.social {
+    text-align: center;
+}
+
+.social__logo {
+    display: block;
+    font-size: 5rem;
+}
+
+.social__link {
+    text-decoration: none;
+}
+
+.social__comment {
+    display: block;
+    font-size: 1rem;
+    color: #555;
+}
