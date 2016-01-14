@@ -29,6 +29,7 @@ def browserconfig():
 
 
 @app.route('/apple-touch-icon.png')
+@app.route('/apple-touch-icon-precomposed.png')
 @app.route('/apple-touch-icon-57x57.png')
 @app.route('/apple-touch-icon-60x60.png')
 @app.route('/apple-touch-icon-72x72.png')
@@ -40,6 +41,9 @@ def browserconfig():
 @app.route('/apple-touch-icon-180x180.png')
 @app.route('/mstile-70x70.png')
 @app.route('/mstile-144x144.png')
+@app.route('/mstile-150x150.png')
+@app.route('/mstile-310x150.png')
+@app.route('/mstile-310x310.png')
 def touch_icons():
     filename = request.path.lstrip('/')
     return send_from_directory(
