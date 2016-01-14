@@ -28,11 +28,26 @@ def browserconfig():
     )
 
 
-@app.route('/apple-touch-icon-<size>.png')
-def apple_touch_icons(size):
+@app.route('/apple-touch-icon<size>.png', defaults={'size': ''})
+@app.route('/apple-touch-icon.png')
+def apple_touch_icons(size=None):
+    print('######### apple-touch-icon{}.png'.format(size))
+    if size:
+        filename = 'apple-touch-icon{}.png'.format(size)
+    else:
+        filename = 'apple-touch-icon.png'
     return send_from_directory(
         os.path.join(app.root_path, 'static/images'),
-        'apple-touch-icon-{}.png'.format(size),
+        filename,
+        mimetype='image/png'
+    )
+
+
+@app.route('/mstile-<size>.png')
+def ms_tiles(size):
+    return send_from_directory(
+        os.path.join(app.root_path, 'static/images'),
+        'mstile-{}.png'.format(size),
         mimetype='image/png'
     )
 
