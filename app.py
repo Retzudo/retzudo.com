@@ -53,7 +53,7 @@ def touch_icons():
     )
 
 
-app.route('/.well-known/acme-challenge/OvlAng0N07PP9UtjjQGFeznblF4KjxzxwIt-VWbQxAc')
+@app.route('/.well-known/acme-challenge/OvlAng0N07PP9UtjjQGFeznblF4KjxzxwIt-VWbQxAc')
 def letsencrypt():
     return 'OvlAng0N07PP9UtjjQGFeznblF4KjxzxwIt-VWbQxAc.hbQJaEkIgdGI0f2W0WrPXPtmQ1VZsDtrqzA8UqVdNrw'
 
