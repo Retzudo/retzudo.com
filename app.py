@@ -1,11 +1,19 @@
 import os
 from flask import Flask, render_template, send_from_directory, request
+from flask.ext.cache import Cache
 
 
+CACHE_TIMEOUT = 300
 app = Flask(__name__)
+cache = Cache(app, config={
+    'CACHE_TYPE': 'simple'
+})
+
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = CACHE_TIMEOUT
 
 
 @app.route('/')
+@app.cached(timeout=CACHE_TIMEOUT)
 def index():
     return render_template('index.html')
 
