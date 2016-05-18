@@ -13,7 +13,7 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = CACHE_TIMEOUT
 
 
 @app.route('/')
-@app.cached(timeout=CACHE_TIMEOUT)
+@cache.cached(timeout=CACHE_TIMEOUT)
 def index():
     return render_template('index.html')
 
