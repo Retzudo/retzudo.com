@@ -42,5 +42,5 @@ body {
     text-align: center;
     padding: 1em 0;
     margin-bottom: 1em;
-    overflow: scroll;
+    overflow: auto;
 }
